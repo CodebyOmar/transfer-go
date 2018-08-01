@@ -10,14 +10,17 @@ body {
 
 .home-banner {
   position: relative;
-  background-image: url('../img/bg-main.jpg');
+  background-image: url('../img/bg-main_.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30%;
   height: 630px;
-  margin: 0;
   z-index:999;
   color: #fff;
+}
+
+.home-banner>.container {
+  z-index:999;
 }
 
 .home-banner:after {
@@ -121,12 +124,12 @@ label.card-label {
   .home-banner-left-col,  .home-banner-right-col{ 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
   }
   .detail-box {
     height: 330px;
     width: 400px;
-    padding: 30px;
+    padding: 5px 15px 15px 15px;
     overflow-y: auto;
   }
   .sub-title {
