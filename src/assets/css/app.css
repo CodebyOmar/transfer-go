@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+}
+
+.logo-text {
+  font-weight:500;
+  font-size:25px;
+  color: #fff;
+}
+
+.home-banner {
+  position: relative;
+  background-image: url('../img/bg-main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 30%;
+  height: 630px;
+  margin: 0;
+  z-index:999;
+  color: #fff;
+}
+
+.home-banner:after {
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: -webkit-linear-gradient(45deg,#6574CD,#64D5CA);
+  background: linear-gradient(45deg,#6574CD,#64D5CA);
+  opacity: .9;
+}
+
+.home-banner-left-col {
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-banner-right-col {
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.detail-box {
+  height: 450px;
+  width: 500px;
+  padding: 30px;
+}
+
+.intro-container {
+  margin-top: 10px;
+}
+
+.intro-title {
+  color: #fff;
+}
+
+.form-title {
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.sub-title {
+  font-size: 30px;
+  color: #6574CD;
+}
+
+.contact-icons {
+  cursor: pointer;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.payment-modal-card {
+  height: 500px;
+  width: 350px;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-modal-logo-text {
+  text-align: center;
+  font-weight:500;
+  font-size:25px;
+  color: #000;
+  padding: 5px 0px 5px 0px;
+}
+
+.payment-modal-footer {
+  background-color:#6574CD;
+  bottom: 0px;
+  top:450px; 
+  height:50px; 
+  align-items: center; 
+  display: flex;
+  position: absolute; 
+  width: 100%;
+}
+
+label.card-label {
+  padding: 2px 0px 2px 0px!important; 
+  font-size: 12px;
+  font-weight:500;
+  color: hsl(0, 0%, 21%);
+}
+
+.card-details {
+  margin: 0px 10px 0px 10px;
+}
+
+@media only screen and (max-width: 1087px) {
+  .intro-title { font-size: 16px!important; }
+  .home-banner-left-col,  .home-banner-right-col{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .detail-box {
+    height: 330px;
+    width: 400px;
+    padding: 30px;
+    overflow-y: auto;
+  }
+  .sub-title {
+    font-size: 20px;
+    color: #6574CD;
+  }
+  .intro-container {
+    margin-top: 0px;
+  }
+  .home-banner-left-col > h1, .home-banner-left-col> p {
+    text-align: center;
+  }
+}

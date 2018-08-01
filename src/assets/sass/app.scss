@@ -1,0 +1,44 @@
+// 1. Import the initial variables
+@import "../../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../../node_modules/bulma/sass/utilities/functions";
+
+
+$green: #38C172;
+$pink: #6574CD;
+$orange: #E3342F;
+$pink-invert: #fff;
+$primary: $pink;
+$primary-invert: $pink-invert;
+$danger: $orange;
+$success: $green;
+$navbar-item-img-max-height: 3.75rem;
+$navbar-height: 6.25rem;
+$navbar-item-color: #fff;
+$navbar-background-color: transparent;
+$primary-font: "Poppins", sans-serif;
+$family-primary: $primary-font;
+
+$box-shadow: none;
+$box-radius: 6px;
+
+// $input-focus-box-shadow-size: 0 0 0 0.0em;
+$input-shadow: none;
+$label-weight: 500;
+
+$modal-z: 1000;
+
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+@import "../../../node_modules/bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+@import "../../../node_modules/bulma/bulma.sass";

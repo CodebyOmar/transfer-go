@@ -1,0 +1,98 @@
+<div :class="modalClasses">
+  <div class="modal-background"></div>
+  <div class="modal-content payment-modal-card">
+    <span class="payment-modal-logo-text">
+      <span>Transfer</span>
+      <i> go</i>
+    </span>
+
+    <div class="card-details">
+      <div class="field">
+        <label class="card-label">CARD NUMBER</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="0000 0000 0000 0000">
+        </p>
+      </div>
+
+      <div class="columns is-variable is-1">
+        <div class="column is-one-quarter">
+          <div class="field">
+            <label class="card-label">MM/YY</label>
+            <p class="control">
+              <input class="input" type="text" placeholder="03/19">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="card-label">PHONE NUMBER</label>
+            <p class="control">
+              <input class="input" type="text" placeholder="+2348139120029">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-variable is-1">
+        <div class="column">
+          <div class="field">
+            <label class="card-label">COUNTRY</label>
+            <p class="control">
+              <div class="select is-fullwidth">
+                <select>
+                  <option value="NGN">NG</option>
+                  <option value="GHS">GH</option>
+                  <option value="KES">KE</option>
+                  <option value="USD">ZA</option>
+                </select>
+              </div>
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="card-label">CVV</label>
+            <p class="control">
+              <input class="input" type="text" placeholder="345">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-variable is-1">
+        <div class="column">
+          <div class="field">
+            <label class="card-label">FIRST NAME</label>
+            <p class="control">
+              <input class="input" type="text" placeholder="Ali">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="field">
+            <label class="card-label">LAST NAME</label>
+            <p class="control">
+              <input class="input" type="text" placeholder="Mohammed">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="card-label">EMAIL</label>
+        <p class="control">
+          <input class="input" type="text" placeholder="user@gmail.com">
+        </p>
+      </div>
+
+    </div>
+
+    <footer class="payment-modal-footer">
+        <a class="button is-primary is-fullwidth">Pay NGN 1,000.00</a>
+    </footer>
+  </div>
+  <button class="modal-close is-large" aria-label="close" @click="close"></button>
+</div>
