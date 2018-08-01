@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <home-banner></home-banner>
-    <div style="margin-top:50px;">
-    <bottom-level></bottom-level>
+    <div style="margin-top:50px;margin-bottom:10px;">
+      <bottom-level></bottom-level>
     </div>
   </div>
 </template>
