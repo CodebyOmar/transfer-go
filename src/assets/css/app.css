@@ -125,10 +125,11 @@ label.card-label {
     display: flex;
     align-items: center;
     justify-items: center;
+    justify-content: center;
   }
   .detail-box {
     height: 330px;
-    width: 400px;
+    width: 300px;
     padding: 5px 15px 15px 15px;
     overflow-y: auto;
   }
