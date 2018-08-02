@@ -207,4 +207,12 @@ label.card-label {
   .home-banner-left-col > h1, .home-banner-left-col> p {
     text-align: center;
   }
+  .claim-funds-modal-card {
+    height:300px;
+    width: 350px;
+    background-color: ghostwhite;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
 }
