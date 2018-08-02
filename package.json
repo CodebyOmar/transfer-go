@@ -13,8 +13,10 @@
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "axios": "^0.18.0",
     "bulma": "^0.7.1",
+    "express": "^4.16.3",
     "node-sass": "^4.9.2",
     "sass-loader": "^7.0.3",
+    "serve-static": "^1.13.2",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },
