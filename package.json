@@ -21,6 +21,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-rc.10",
     "@vue/cli-service": "^3.0.0-rc.10",
+    "prerender-spa-plugin": "^3.2.1",
     "vue-template-compiler": "^2.5.16"
   },
   "postcss": {
