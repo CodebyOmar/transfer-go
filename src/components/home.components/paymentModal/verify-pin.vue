@@ -9,7 +9,7 @@
       <div class="field">
         <label class="card-label">PIN</label>
         <p class="control">
-          <input class="input" type="text" placeholder="0000" v-model="pin">
+          <input class="input" type="password" placeholder="0000" v-model="pin">
         </p>
       </div>
     </div>

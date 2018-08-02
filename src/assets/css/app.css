@@ -121,6 +121,26 @@ body {
   flex-direction: column;
 }
 
+.claim-funds-modal-card {
+  height:350px;
+  width: 350px;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.claim-funds-modal-footer {
+  background-color:#6574CD;
+  bottom: 0px;
+  top:300px; 
+  height:50px; 
+  align-items: center; 
+  display: flex;
+  position: absolute; 
+  width: 100%;
+}
+
 .verify-modal-footer {
   background-color:#6574CD;
   bottom: 0px;

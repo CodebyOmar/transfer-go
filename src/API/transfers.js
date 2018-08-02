@@ -82,3 +82,52 @@ export const SEND_BILLING_INFO = async (billing_info) => {
 
   return await res()
 }
+
+export const GET_BANKS = async () => {
+  let endpoint = encodeURI("/transfer-go/v1/send/banks/ng")
+
+  const res = () => {
+    return new Promise ((resolve, reject) => {
+      HTTP.get(endpoint).then(response => {
+        resolve(response.data)
+      }).catch(err => {
+        reject(err)
+      })
+    })
+  }
+
+  return await res()
+}
+
+export const GET_TRANSACTION = async (id) => {
+  let endpoint = encodeURI("/transfer-go/v1/send/transaction/"+id)
+
+  const res = () => {
+    return new Promise ((resolve, reject) => {
+      HTTP.get(endpoint).then(response => {
+        resolve(response.data)
+      }).catch(err => {
+        reject(err)
+      })
+    })
+  }
+
+  return await res()
+}
+
+
+export const CLAIM_FUNDS = async (payload) => {
+  let endpoint = encodeURI("/transfer-go/v1/claim/activate")
+
+  const res = () => {
+    return new Promise ((resolve, reject) => {
+      HTTP.post(endpoint, payload).then(response => {
+        resolve(response.data)
+      }).catch(err => {
+        reject(err)
+      })
+    })
+  }
+
+  return await res()
+}

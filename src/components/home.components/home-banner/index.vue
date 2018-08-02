@@ -16,7 +16,7 @@ export default {
       error: "",
       displayError: false,
       d: {
-        meta: [{ name: "", phonenumber: 234 }],
+        meta: [{ name: "", phonenumber: "" }],
         amount: undefined,
         currency: undefined
       }
@@ -42,7 +42,7 @@ export default {
 
     clearForm() {
       this.d = {
-        meta: [{ name: "", phonenumber: 234 }],
+        meta: [{ name: "", phonenumber: "" }],
         amount: undefined,
         currency: undefined
       }

@@ -10,7 +10,7 @@
         <div class="field">
           <label class="card-label">OTP</label>
           <p class="control">
-            <input class="input" type="text" placeholder="********" v-model="otp">
+            <input class="input" type="password" placeholder="********" v-model="otp">
           </p>
         </div>
       </div>
