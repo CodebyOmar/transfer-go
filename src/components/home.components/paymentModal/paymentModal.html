@@ -1,98 +1,44 @@
 <div :class="modalClasses">
   <div class="modal-background"></div>
-  <div class="modal-content payment-modal-card">
-    <span class="payment-modal-logo-text">
-      <span>Transfer</span>
-      <i> go</i>
-    </span>
 
-    <div class="card-details">
-      <div class="field">
-        <label class="card-label">CARD NUMBER</label>
-        <p class="control">
-          <input class="input" type="text" placeholder="0000 0000 0000 0000">
-        </p>
-      </div>
+  <div style="display: flex;flex-direction: column">
+    <div class="has-text-centered is-error" style="font-weight: 700; z-index:900;" v-if="showErr">{{error}}</div>
+    
+    <transition name="zoom-in">
+      <card-details 
+        v-if="stage === 'card'" 
+        @submitted="sendCard" 
+        @error="displayError" 
+        :amount="data.amount"
+        :transfering="transfering"/>
+    </transition>
 
-      <div class="columns is-variable is-1 is-mobile">
-        <div class="column is-one-quarter">
-          <div class="field">
-            <label class="card-label">MM/YY</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="03/19">
-            </p>
-          </div>
-        </div>
+    <transition name="zoom-in">
+      <verify-pin 
+        v-if="stage === 'PIN'" 
+        @submitted="verifyPin" 
+        @error="displayError" 
+        :verifying="verifying_pin"/>
+    </transition>
 
-        <div class="column">
-          <div class="field">
-            <label class="card-label">PHONE NUMBER</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="+2348139120029">
-            </p>
-          </div>
-        </div>
-      </div>
+    <transition name="zoom-in">
+      <verify-otp 
+        v-if="stage === 'otp'" 
+        @submitted="verifyOtp" 
+        @error="displayError"
+        :verifying="verifying_otp"
+        :successful="otp_success"
+        :message-success="message_success"/>
+    </transition>
 
-      <div class="columns is-variable is-1 is-mobile">
-        <div class="column">
-          <div class="field">
-            <label class="card-label">COUNTRY</label>
-            <p class="control">
-              <div class="select is-fullwidth">
-                <select>
-                  <option value="NGN">NG</option>
-                  <option value="GHS">GH</option>
-                  <option value="KES">KE</option>
-                  <option value="USD">ZA</option>
-                </select>
-              </div>
-            </p>
-          </div>
-        </div>
+    <transition name="zoom-in">
+      <billing-info 
+        v-if="stage === 'NOAUTH_INTERNATIONAL' || stage === 'AVS_VBVSECURECODE'"
+        @submitted="sendBillingInfo"
+        @error="displayError"
+        :billing="billing"/>
+    </transition>
+  </div> 
 
-        <div class="column">
-          <div class="field">
-            <label class="card-label">CVV</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="345">
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns is-variable is-1 is-mobile">
-        <div class="column">
-          <div class="field">
-            <label class="card-label">FIRST NAME</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="Ali">
-            </p>
-          </div>
-        </div>
-
-        <div class="column">
-          <div class="field">
-            <label class="card-label">LAST NAME</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="Mohammed">
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="card-label">EMAIL</label>
-        <p class="control">
-          <input class="input" type="text" placeholder="user@gmail.com">
-        </p>
-      </div>
-
-    </div>
-
-    <footer class="payment-modal-footer">
-        <a class="button is-primary is-fullwidth">Pay NGN 1,000.00</a>
-    </footer>
-  </div>
   <button class="modal-close is-large" aria-label="close" @click="close"></button>
 </div>

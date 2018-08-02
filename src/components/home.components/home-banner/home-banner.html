@@ -5,7 +5,7 @@
     <div class="columns intro-container is-desktop">
       <div class="column home-banner-left-col">
         <h1 class="title intro-title is-1">Send money to anyone, using their phone numbers.</h1>
-        <p class="is-hidden-mobile">Transfer funds to your family and friends without needing to have thier account numbers. The funds is sent to their phone numbers, and they claim it.</p>
+        <p class="is-hidden-mobile">Transfer funds to your family and friends without needing to have their account numbers. The funds is sent to their phone numbers, and they claim it.</p>
       </div>
 
       <div class="column home-banner-right-col">
@@ -16,26 +16,35 @@
 
           <div class="field">
             <p class="control">
-              <input class="input is-medium" type="text" placeholder="Recipient's name">
+              <input class="input is-medium" type="text" placeholder="Recipient's name" v-model="d.meta[0].name"/>
+            </p>
+          </div>
+
+          <div class="field">
+            <!-- <p class="control">
+              <a class="button is-static is-medium">+234</a>
+            </p> -->
+            <p class="control is-expanded">
+              <input 
+                required
+                class="input is-medium" 
+                type="number" 
+                placeholder="Recipient's phone number" 
+                v-model="d.meta[0].phonenumber"/>
             </p>
           </div>
 
           <div class="field">
             <p class="control">
-              <input class="input is-medium" type="text" placeholder="Recipient's phone number">
-            </p>
-          </div>
-
-          <div class="field">
-            <p class="control">
-              <input class="input is-medium" type="number" placeholder="Amount">
+              <input required class="input is-medium" type="number" placeholder="Amount" v-model="d.amount">
             </p>
           </div>
 
           <div class="field">
             <p class="control">
               <div class="select is-medium is-fullwidth">
-                <select>
+                <select v-model="d.currency" required>
+                  <option value='undefined'>Choose Currency</option>
                   <option value="NGN">NGN</option>
                   <option value="GHS">GHS</option>
                   <option value="KES">KES</option>
@@ -51,10 +60,22 @@
               <font-awesome-icon icon="arrow-right"/>
             </span>
           </a>
+
+          <transition name="fade">
+            <p class="has-text-centered is-error" v-show="displayError">{{error}}</p>
+          </transition>
         </div>
       </div>
     </div>
   </div>
 
-  <payModal :show="showPopup" @close="closePopUp"/>
+  <transition name="zoom-out">
+    <payModal 
+      :show="showPopup" 
+      @close="closePopUp" 
+      @transaction:done="clearForm" 
+      @reset="clearForm"
+      v-show="showPopup" 
+      :data="d"/>    
+  </transition>
 </div>

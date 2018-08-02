@@ -12,17 +12,40 @@ export default {
 
   data() {
     return {
-      showPopup: false
+      showPopup: false,
+      error: "",
+      displayError: false,
+      d: {
+        meta: [{ name: "", phonenumber: 234 }],
+        amount: undefined,
+        currency: undefined
+      }
     }
   },
 
   methods: {
     initPay() {
-      this.showPopup = true
+      let {meta, amount, currency} = this.d
+
+      if(meta[0].name === "" || meta[0].phonenumber === "" || amount === "" || currency === "") {
+        this.error = "All fields are required"
+        this.displayError = true
+        setTimeout(() => this.displayError = false, 15000);
+      } else {
+        this.showPopup = true
+      }
     },
 
     closePopUp() {
       this.showPopup = false
+    },
+
+    clearForm() {
+      this.d = {
+        meta: [{ name: "", phonenumber: 234 }],
+        amount: undefined,
+        currency: undefined
+      }
     }
   },
 

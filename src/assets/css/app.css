@@ -8,6 +8,10 @@ body {
   color: #fff;
 }
 
+.title {
+  font-weight: 500!important;
+}
+
 .home-banner {
   position: relative;
   background-image: url('../img/bg-main_.png');
@@ -32,7 +36,7 @@ body {
   height: 100%;
   background: -webkit-linear-gradient(45deg,#6574CD,#64D5CA);
   background: linear-gradient(45deg,#6574CD,#64D5CA);
-  opacity: .9;
+  opacity: .84;
 }
 
 .home-banner-left-col {
@@ -108,6 +112,42 @@ body {
   width: 100%;
 }
 
+.verify-modal-card {
+  height: 200px;
+  width: 350px;
+  background-color: ghostwhite;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.verify-modal-footer {
+  background-color:#6574CD;
+  bottom: 0px;
+  top:150px; 
+  height:50px; 
+  align-items: center; 
+  display: flex;
+  position: absolute; 
+  width: 100%;
+}
+
+.verify-success-modal-footer {
+  background-color:transparent;
+  bottom: 0px;
+  top:150px; 
+  height:50px; 
+  align-items: center; 
+  display: flex;
+  position: absolute; 
+  width: 100%;
+}
+
+.helper-text-otp {
+  text-align: center;
+  color: #000;
+}
+
 label.card-label {
   padding: 2px 0px 2px 0px!important; 
   font-size: 12px;
@@ -117,6 +157,10 @@ label.card-label {
 
 .card-details {
   margin: 0px 10px 0px 10px;
+}
+
+.is-error {
+  color: red;
 }
 
 @media only screen and (max-width: 1087px) {

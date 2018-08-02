@@ -26,6 +26,7 @@ $input-shadow: none;
 $label-weight: 500;
 
 $modal-z: 1000;
+$modal-background-background-color: rgba(#000000, 0.6);
 
 $linkedin: #0077b5;
 $linkedin-invert: findColorInvert($linkedin);
@@ -42,3 +43,4 @@ $addColors: (
 $colors: map-merge($colors, $addColors);
 
 @import "../../../node_modules/bulma/bulma.sass";
+@import "./animations.scss"
